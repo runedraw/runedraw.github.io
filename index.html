@@ -15,7 +15,7 @@
 
         /* Global Styles */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* More standard font stack */
             background-color: var(--bg-color);
             color: var(--text-color);
             display: flex;
@@ -72,8 +72,13 @@
             color: #a0a0c0;
         }
 
-        /* Button Styling (Call to Action) */
-        #cta-button {
+        /* Anchor Tag styled as a Button (Call to Action) */
+        #cta-link {
+            /* Link-specific styling */
+            text-decoration: none;
+            display: inline-block;
+            
+            /* Button styling */
             background-color: var(--logo-color);
             color: var(--bg-color);
             border: none;
@@ -83,11 +88,9 @@
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.1s;
-            text-decoration: none; /* Make it look like a button but act as a link */
-            display: inline-block;
         }
 
-        #cta-button:hover {
+        #cta-link:hover {
             background-color: #80deea;
             transform: translateY(-2px);
         }
@@ -111,11 +114,13 @@
             <h1>Email Verified! 🎉</h1>
             <p>Your email address has been successfully verified. You can now log in to the RuneDraw application and start using your account.</p>
 
-            <a id="cta-button" href="runedraw://app/login" target="_blank">
+            <a id="cta-link" href="https://app.runedraw.com/login" target="_top">
                 Continue to RuneDraw App
             </a>
             
-            <p style="margin-top: 25px; font-size: 0.9em;">(If the app doesn't open automatically, please tap the button above.)</p>
+            <p style="margin-top: 25px; font-size: 0.9em; color: #7f8c8d;">
+                (If you are on a mobile device, tapping the button above should open the app.)
+            </p>
         </main>
 
         <footer class="footer">
